@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="WireSales" Class="DataClasses_MainDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=WireSales;Integrated Security=True" SettingsObjectName="WireSales_Prj.Properties.Settings" SettingsPropertyName="WireSalesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TBL_Users" Member="TBL_Users">
+    <Type Name="TBL_User">
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserPermission" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="UserPrmHouseFor" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Wire" Member="TBL_Wires">
+    <Type Name="TBL_Wire">
+      <Column Name="WireCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WireName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="WireAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WireDsc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="TBL_Wire_TBL_WireBuy" Member="TBL_WireBuys" OtherKey="WireCode" Type="TBL_WireBuy" />
+      <Association Name="TBL_Wire_TBL_WireSale" Member="TBL_WireSales" OtherKey="WireCode" Type="TBL_WireSale" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_WireBuy" Member="TBL_WireBuys">
+    <Type Name="TBL_WireBuy">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WireCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BuyAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BuyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_Wire_TBL_WireBuy" Member="TBL_Wire" ThisKey="WireCode" Type="TBL_Wire" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_WireSale" Member="TBL_WireSales">
+    <Type Name="TBL_WireSale">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WireCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaleAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SaleDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBL_Wire_TBL_WireSale" Member="TBL_Wire" ThisKey="WireCode" Type="TBL_Wire" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vw_WireList" Member="Vw_WireLists">
+    <Type Name="Vw_WireList">
+      <Column Name="RowNo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="WireCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WireName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="WireAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WireDsc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vw_WireBuyList" Member="Vw_WireBuyLists">
+    <Type Name="Vw_WireBuyList">
+      <Column Name="RowNo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WireCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BuyDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BuyAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WireName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="WireDsc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vw_WireSaleList" Member="Vw_WireSaleLists">
+    <Type Name="Vw_WireSaleList">
+      <Column Name="RowNo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WireCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaleDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SaleAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WireName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="WireDsc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vw_ChartView" Member="Vw_ChartViews">
+    <Type Name="Vw_ChartView">
+      <Column Name="WireCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WireName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="WireAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BuyAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SaleAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vw_ActionWireList" Member="Vw_ActionWireLists">
+    <Type Name="Vw_ActionWireList">
+      <Column Name="WireCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WireName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ActionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Buy" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Sale" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Inventory" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Convert" Member="TBL_Converts">
+    <Type Name="TBL_Convert">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Buy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sale" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vw_ActionBuySale" Member="Vw_ActionBuySales">
+    <Type Name="Vw_ActionBuySale">
+      <Column Name="idbuy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idsale" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WireCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WireName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ActionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Buy" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Sale" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Inventory" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Sp_SetMonthYearForChart" Method="Sp_SetMonthYearForChart">
+    <Parameter Name="SelectMode" Parameter="selectMode" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="DateStart" Parameter="dateStart" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DateEnd" Parameter="dateEnd" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_SetMonthYearWithCodeForChart" Method="Sp_SetMonthYearWithCodeForChart">
+    <Parameter Name="SelectMode" Parameter="selectMode" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="DateStart" Parameter="dateStart" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DateEnd" Parameter="dateEnd" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="WireCode" Parameter="wireCode" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Sp_SetConvert" Method="Sp_SetConvert">
+    <Parameter Name="DateStart" Parameter="dateStart" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DateEnd" Parameter="dateEnd" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

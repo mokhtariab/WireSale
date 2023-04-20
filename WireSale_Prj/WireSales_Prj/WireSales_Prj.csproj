@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43BF19FC-B71E-4FEC-B4F1-58D7FDDDB472}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WireSales_Prj</RootNamespace>
+    <AssemblyName>WireSales_Prj</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <ApplicationIcon>Cable.ico</ApplicationIcon>
+    <Win32Resource>
+    </Win32Resource>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.TINYLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v7.2, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.Utils.v7.2, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraBars.v7.2, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v7.2, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraCharts.v7.2.UI, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraEditors.v7.2, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraGrid.v7.2, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+    <Reference Include="DevExpress.XtraPrinting.v7.2, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v7.2, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v7.2.Design, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v7.2.Import, Version=7.2.2.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL" />
+    <Reference Include="Interop.TINYLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Function_Cls.cs" />
+    <Compile Include="DataClasses_Main.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses_Main.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\ExportExcel_Uc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForms\ExportExcel_Uc.Designer.cs">
+      <DependentUpon>ExportExcel_Uc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\SelectWire_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\SelectWire_frm.Designer.cs">
+      <DependentUpon>SelectWire_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\WireAction_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForms\WireAction_UC.Designer.cs">
+      <DependentUpon>WireAction_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\MainHM_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\MainHM_frm.Designer.cs">
+      <DependentUpon>MainHM_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Global_Cls.cs" />
+    <Compile Include="Reports\ChartDateWire_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\ChartDateWire_UC.Designer.cs">
+      <DependentUpon>ChartDateWire_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ChartDateWReg_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\ChartDateWReg_UC.Designer.cs">
+      <DependentUpon>ChartDateWReg_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ChartGoodWire_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\ChartGoodWire_UC.Designer.cs">
+      <DependentUpon>ChartGoodWire_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ChartGoodWReg_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\ChartGoodWReg_UC.Designer.cs">
+      <DependentUpon>ChartGoodWReg_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ChartDateWCompare_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\ChartDateWCompare_UC.Designer.cs">
+      <DependentUpon>ChartDateWCompare_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ChartGoodWCompare_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\ChartGoodWCompare_UC.Designer.cs">
+      <DependentUpon>ChartGoodWCompare_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WireBuy\NEWireBuy_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WireBuy\NEWireBuy_frm.designer.cs">
+      <DependentUpon>NEWireBuy_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WireBuy\WireBuy_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WireBuy\WireBuy_UC.designer.cs">
+      <DependentUpon>WireBuy_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WireSale\NEWireSale_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WireSale\NEWireSale_frm.designer.cs">
+      <DependentUpon>NEWireSale_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WireSale\WireSale_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WireSale\WireSale_UC.designer.cs">
+      <DependentUpon>WireSale_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wire\NEWire_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wire\NEWire_frm.designer.cs">
+      <DependentUpon>NEWire_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wire\Wire_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wire\Wire_UC.Designer.cs">
+      <DependentUpon>Wire_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\MessageSara_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\MessageSara_Frm.Designer.cs">
+      <DependentUpon>MessageSara_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wire\SearchWire_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wire\SearchWire_UC.Designer.cs">
+      <DependentUpon>SearchWire_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\RstPass_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\RstPass_frm.Designer.cs">
+      <DependentUpon>RstPass_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="app.config" />
+    <None Include="DataClasses_Main.dbml.layout">
+      <DependentUpon>DataClasses_Main.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="MainForms\ExportExcel_Uc.resx">
+      <DependentUpon>ExportExcel_Uc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\MainHM_frm.resx">
+      <DependentUpon>MainHM_frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\SelectWire_frm.resx">
+      <DependentUpon>SelectWire_frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\StartHM_frm.resx">
+      <DependentUpon>StartHM_frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\WireAction_UC.resx">
+      <DependentUpon>WireAction_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\ChartDateWire_UC.resx">
+      <DependentUpon>ChartDateWire_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ChartDateWReg_UC.resx">
+      <DependentUpon>ChartDateWReg_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ChartGoodWire_UC.resx">
+      <DependentUpon>ChartGoodWire_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ChartGoodWReg_UC.resx">
+      <DependentUpon>ChartGoodWReg_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ChartDateWCompare_UC.resx">
+      <DependentUpon>ChartDateWCompare_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ChartGoodWCompare_UC.resx">
+      <DependentUpon>ChartGoodWCompare_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WireBuy\NEWireBuy_frm.resx">
+      <DependentUpon>NEWireBuy_frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WireBuy\WireBuy_UC.resx">
+      <DependentUpon>WireBuy_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WireSale\NEWireSale_frm.resx">
+      <DependentUpon>NEWireSale_frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WireSale\WireSale_UC.resx">
+      <DependentUpon>WireSale_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wire\NEWire_frm.resx">
+      <DependentUpon>NEWire_frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wire\Wire_UC.resx">
+      <DependentUpon>Wire_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\MessageSara_Frm.resx">
+      <DependentUpon>MessageSara_Frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wire\SearchWire_UC.resx">
+      <DependentUpon>SearchWire_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\RstPass_frm.resx">
+      <DependentUpon>RstPass_frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserPermission_frm.resx">
+      <DependentUpon>UserPermission_frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\NEUser_frm.resx">
+      <DependentUpon>NEUser_frm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\ListUser_UC.resx">
+      <DependentUpon>ListUser_UC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="DataClasses_Main.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses_Main.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="MainForms\StartHM_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\StartHM_frm.Designer.cs">
+      <DependentUpon>StartHM_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserPermission_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\UserPermission_frm.Designer.cs">
+      <DependentUpon>UserPermission_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\NEUser_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\NEUser_frm.Designer.cs">
+      <DependentUpon>NEUser_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ListUser_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\ListUser_UC.Designer.cs">
+      <DependentUpon>ListUser_UC.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cable.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>if /I "$(ConfigurationName)" == "Release" Eazfuscator.NET.exe "$(TargetPath)" --msbuild-project-path "$(ProjectPath)" --msbuild-project-configuration "$(ConfigurationName)" -n --newline-flush</PostBuildEvent>
+  </PropertyGroup>
+</Project>

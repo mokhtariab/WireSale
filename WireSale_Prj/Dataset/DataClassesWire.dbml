@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="WireSales" Class="DataClassesWireDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=WireSales;Integrated Security=True" SettingsObjectName="Dataset.Properties.Settings" SettingsPropertyName="WireSalesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TBL_Wire" Member="TBL_Wires">
+    <Type Name="TBL_Wire">
+      <Column Name="WireCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WireName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="WireAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WireDsc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_WireBuy" Member="TBL_WireBuys">
+    <Type Name="TBL_WireBuy">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WireCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BuyAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BuyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_WireSale" Member="TBL_WireSales">
+    <Type Name="TBL_WireSale">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WireCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaleAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SaleDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Users" Member="TBL_Users">
+    <Type Name="TBL_User">
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserPermission" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="UserPrmHouseFor" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

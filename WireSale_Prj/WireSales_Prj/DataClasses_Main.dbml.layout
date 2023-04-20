@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses_Main">
+  <DataContextMoniker Name="/DataClasses_MainDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6703415a-cd5c-4b94-b844-3d31b26f5d31" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/TBL_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f236db28-a59b-42d0-acd9-544639cd375d" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.7579998200138411" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7df3a9b5-f63c-434a-9b61-11117ce3a76c" isExpanded="false" absoluteBounds="0.5, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/TBL_Wire" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4dbbd9ef-8926-4019-8cbe-f9738220b363" absoluteBounds="0.51500000000000012, 1.585, 1.9700000000000002, 1.1905064557989438" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="14eccf5e-48d7-492a-b0d1-cecddacba7a3" isExpanded="false" absoluteBounds="2.75, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/TBL_WireBuy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f62522a-069a-4d93-a042-314e20abd73c" absoluteBounds="2.7649999999999997, 1.585, 1.9700000000000002, 1.0013420010606446" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.35); (2.75 : 1.35)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses_MainDataContext/TBL_Wire/TBL_Wire_TBL_WireBuy" />
+      <nodes>
+        <classShapeMoniker Id="7df3a9b5-f63c-434a-9b61-11117ce3a76c" />
+        <classShapeMoniker Id="14eccf5e-48d7-492a-b0d1-cecddacba7a3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="afc5c3e8-2d12-4339-939d-5764b11fa01a" isExpanded="false" absoluteBounds="2.75, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/TBL_WireSale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f91f13c8-5b0d-4429-9237-11a16d622ce3" absoluteBounds="2.7649999999999997, 0.96, 1.9700000000000002, 1.0013420010606446" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.125); (2.75 : 0.95)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses_MainDataContext/TBL_Wire/TBL_Wire_TBL_WireSale" />
+      <nodes>
+        <classShapeMoniker Id="7df3a9b5-f63c-434a-9b61-11117ce3a76c" />
+        <classShapeMoniker Id="afc5c3e8-2d12-4339-939d-5764b11fa01a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e667bed3-56a9-47b1-8b5b-c84c141bb1ae" isExpanded="false" absoluteBounds="5.125, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/Vw_WireList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9086169f-044c-4f98-82c3-8d78bb043327" absoluteBounds="5.14, 0.96, 1.9700000000000002, 1.3796709105372429" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3edcc1c3-9b9b-443f-a1b6-5e5804dbadf7" isExpanded="false" absoluteBounds="5.875, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/Vw_WireBuyList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0618f462-fb61-4232-96b0-0e7c48c63c8d" absoluteBounds="5.8900000000000006, 1.585, 1.9700000000000002, 1.5688353652755418" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4c7cdaf0-4b7f-4728-beb5-c1a515adc60c" isExpanded="false" absoluteBounds="7.375, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/Vw_WireSaleList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62de3279-1fb6-4e2f-9f9b-d4bdf9601887" absoluteBounds="7.39, 0.96000000000000085, 1.9700000000000002, 1.5688353652755418" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b983c033-5934-4bbd-8432-0792ceba9003" isExpanded="false" absoluteBounds="0.625, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/Vw_ChartView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0bd2149a-1b69-4642-85a1-291e5a0294d1" absoluteBounds="0.64000000000000057, 2.585, 1.9700000000000002, 1.1905064557989438" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2bfe7b1c-be45-42a9-aa0a-b75a375b5953" isExpanded="false" absoluteBounds="2.875, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/Vw_ActionWireList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c5921c6-5bb0-48fc-9436-8d8aa24674ad" absoluteBounds="2.8899999999999997, 2.585, 1.9700000000000002, 1.3796709105372429" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="926c908a-cf5d-40ee-bbad-dbb7492d255b" isExpanded="false" absoluteBounds="5.375, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/TBL_Convert" />
+      <nestedChildShapes>
+        <elementListCompartment Id="583db6f8-156d-485f-97ea-324a6b3e8519" absoluteBounds="5.39, 2.585, 1.9700000000000002, 1.3796709105372429" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b16526d-d513-44bc-a12a-24cf9ebe436d" isExpanded="false" absoluteBounds="0.625, 4.5, 2, 0.45">
+      <DataClassMoniker Name="/DataClasses_MainDataContext/Vw_ActionBuySale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e50a4d9a-4dea-498a-86bc-66f4d0a6e3d2" absoluteBounds="0.64000000000000012, 4.96, 1.9700000000000002, 1.7579998200138411" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
